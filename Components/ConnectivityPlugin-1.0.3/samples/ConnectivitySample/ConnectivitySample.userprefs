@@ -1,0 +1,3 @@
+﻿<Properties StartupItem="ConnectivitySample/ConnectivitySample.Droid/ConnectivitySample.Droid.csproj">
+  <MonoDevelop.Ide.ItemProperties.ConnectivitySample.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86_X86_google_apis" />
+</Properties>
