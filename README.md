@@ -10,7 +10,7 @@ https://developer.xamarin.com/guides/android/getting_started/installation/window
 
 ![Alt text](/readme_images/directory.png?raw=true "File directory")
 
-
+  ##MainActivity.cs -> APP首頁，登入端
   * 從這裡點擊任何一個button便開啟該頁面的Activity
   * 每個Activity的設計介面在／layout 底下
     1. Main.axml : 開啟app最先進入的頁面
