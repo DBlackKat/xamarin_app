@@ -1,7 +1,7 @@
 ﻿<Properties StartupItem="scanner/scanner.csproj">
   <MonoDevelop.Ide.Workbench ActiveDocument="scanner/MainActivity.cs">
     <Files>
-      <File FileName="scanner/MainActivity.cs" Line="217" Column="5" />
+      <File FileName="scanner/MainActivity.cs" Line="111" Column="56" />
       <File FileName="scanner/Search.cs" Line="34" Column="24" />
       <File FileName="scanner/InputNewUser.cs" Line="41" Column="4" />
     </Files>

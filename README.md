@@ -1,5 +1,4 @@
 # xamarin_app
-
 ###學聯會資訊部——第一個app
 
 ####最低需要Android 2.2 - Level 8
@@ -17,6 +16,7 @@ https://developer.xamarin.com/guides/android/getting_started/installation/window
 4. 前端AXAML -> 後端語言：C#、.NET ; 資料庫 ： SQlite ; 伺服器API : Flask + Sqlite   
 
 ![Alt text](/readme_images/directory.png?raw=true "File directory")
+
 ##MainActivity.cs -> APP首頁，登入端
   * 從這裡點擊任何一個button便開啟該頁面的Activity
   * 每個Activity的設計介面在／layout 底下
