@@ -12,18 +12,22 @@ using System.IO;
 using System.Text;
 using System;
 using SQLite;
+using SupportToolbar = Android.Support.V7.Widget.Toolbar;
+using Android.Support.V7.App;
+using Android.Support.V4.Widget;
+using Android.Views;
 
 namespace scanner
 {
-	[Activity(Label = "scanner", MainLauncher = true, Icon = "@mipmap/icon")]
+	[Activity(Label = "scanner", MainLauncher = true, Icon = "@mipmap/icon", Theme ="@style/MyTheme" )]
 
-	public class MainActivity : Activity
+	public class MainActivity : ActionBarActivity
 	{
 		private async void BtnScan_Click(object sender, EventArgs e)
 		{
 			//var options = new ZXing.Mobile.MobileBarcodeScanningOptions();
 			var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-
+           
 			//options.PossibleFormats = new List<ZXing.BarcodeFormat>() {
 			//	ZXing.BarcodeFormat.CODE_93, ZXing.BarcodeFormat.CODE_39
 			//};
@@ -130,34 +134,80 @@ namespace scanner
 				}, TaskScheduler.FromCurrentSynchronizationContext()
 			);
 		}
-		protected override void OnCreate(Bundle savedInstanceState)
+
+        //private member needed for navigated drawer
+        private DrawerLayout drawerLayout;
+        private ListView leftDrawer;
+        private ActionBarDrawerToggle DrawerToggle;
+        private ArrayAdapter<String> drawerAdapter;
+        private string[] index = { "掃描", "添加內容", "搜尋", "下載資料" };
+
+        protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 			// Set our view from the "main" layout resource
 			SetContentView(Resource.Layout.Main);
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button = FindViewById<Button>(Resource.Id.myButton);
-			button.Click += BtnScan_Click;
 
-			Button insertBtn = FindViewById<Button>(Resource.Id.createTable);
-			Button searchBtn = FindViewById<Button>(Resource.Id.count);
-			Button buildID = FindViewById<Button>(Resource.Id.getID);
-			insertBtn.Click += (sender, e) =>
-			{
-				var intent = new Intent(this, typeof(InputNewUser));
-				StartActivity(intent);
-			};
-			searchBtn.Click += (sender, e) =>
-			{
-				var searchLayout = new Intent(this, typeof(Search));
-				StartActivity(searchLayout);
-			};
+            //Set Toolbar
+            SupportToolbar Toolbar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(Toolbar);
+            Toolbar.SetLogo(Resource.Mipmap.Icon);
+            SupportActionBar.SetDisplayShowTitleEnabled(false);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-			buildID.Click += testBtn_Click;
+            //Set DrawerToggle
+            drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            leftDrawer = FindViewById<ListView>(Resource.Id.left_drawer);
+            DrawerToggle = new ActionBarDrawerToggle(
+                this,                         //Host Activity
+                drawerLayout,               //DrawerLayout
+                Resource.String.openDrawer,
+                Resource.String.closeDrawer
+                );
+            DrawerToggle.SyncState();
+            drawerLayout.SetDrawerListener(DrawerToggle);
+
+            //Create Index to Add in the drawer            
+            drawerAdapter = new ArrayAdapter<String>(this,Android.Resource.Layout.SimpleListItem1,index);
+            leftDrawer.SetAdapter(drawerAdapter);
+            leftDrawer.ItemClick += leftDrawer_ItemClick;
 		}
 
-		public string insertDB( string name, string id, string pay,string sex)
+        /********This Area is for the ckick event for toolbar and its button*******/
+        //Any icon on the toolbar was "clicked"
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            DrawerToggle.OnOptionsItemSelected(item);
+            return base.OnOptionsItemSelected(item);
+        }
+
+        private void leftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            if (index[e.Position] == "掃描")
+            {
+                BtnScan_Click(sender, e);
+            }
+            else if (index[e.Position] == "添加內容")
+            {
+                var intent = new Intent(this, typeof(InputNewUser));
+                StartActivity(intent);
+            }
+
+            else if (index[e.Position] == "搜尋")
+            {
+                var searchLayout = new Intent(this, typeof(Search));
+                StartActivity(searchLayout);
+            }
+
+            else if (index[e.Position] == "下載資料")
+            {
+                testBtn_Click(sender, e);
+            }
+        }
+
+        /********This Area is for the ckick event for toolbar and its button*******/
+
+        public string insertDB( string name, string id, string pay,string sex)
 		{
 			try
 			{

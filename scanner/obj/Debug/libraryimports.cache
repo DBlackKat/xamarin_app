@@ -2,7 +2,5 @@
 <Paths>
   <ManifestDocuments />
   <NativeLibraries />
-  <Jars>
-    <Jar>obj/Debug/__library_projects__/OkHttp/library_project_imports/okhttp-2.3.0-jar-with-dependencies.jar</Jar>
-  </Jars>
+  <Jars />
 </Paths>

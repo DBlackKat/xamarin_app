@@ -3,4 +3,7 @@
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">scanner</string>
 	<string name="insertData">Add new people</string>
+  <string name="none"></string>
+  <string name="openDrawer">Open Drawer</string>
+  <string name="closeDrawer">Close Drawer</string>
 </resources>
