@@ -81,10 +81,10 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "scanner.dll" comes first in this list. */
 		"scanner.dll",
 		"Java.Interop.dll",
-		"Xamarin.Android.Support.v4.dll",
-		"Xamarin.Android.Support.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
+		"Xamarin.Android.Support.v4.dll",
 		"Xamarin.Android.Support.v7.AppCompat.dll",
+		"Xamarin.Android.Support.Vector.Drawable.dll",
 		"zxing.portable.dll",
 		"ZXing.Net.Mobile.Core.dll",
 		"ZXingNetMobile.dll",
