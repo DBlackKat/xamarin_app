@@ -16,6 +16,7 @@ using SupportToolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Support.V7.App;
 using Android.Support.V4.Widget;
 using Android.Views;
+using Newtonsoft.Json;
 
 namespace scanner
 {
@@ -69,7 +70,7 @@ namespace scanner
 			}
 			string response = createDB(sqlLiteFilePath);
 			Toast.MakeText(this, response, ToastLength.Short).Show();
-			string TARGETURL = "http://theblackcat102.nctu.me:5000/NCTU/api/v1.0/tasks";
+			string TARGETURL = "http://theblackcat102.nctu.me:5000/NCTU/api/v1.0/grade/108";
 				//Toast.MakeText(this, TARGETURL, ToastLength.Short).Show();
 			var handler = new HttpClientHandler();
 				//Toast.MakeText(this, "handler gen pass", ToastLength.Short).Show();
@@ -93,6 +94,8 @@ namespace scanner
 			{
 				Toast.MakeText(this, "client get failed:" + except.Message, ToastLength.Short).Show();
 			}
+
+
 			// ... Display the result.
 			ProgressDialog progress;
 			progress = ProgressDialog.Show(this, "Loading", "Please Wait...", true);
@@ -101,25 +104,25 @@ namespace scanner
 			{
 				if (result != null && result.Length >= 50)
 				{
-					var data = JsonValue.Parse(result);
-					var students = data["task"];
-					string name;
-					Console.WriteLine("parsed successfully");
+					
 					try
 					{
 						string dbPath = GetFileStreamPath("") + "/db_user.db";
 						var db = new SQLiteConnection(dbPath);
-						foreach (JsonValue student in students)
+						Console.WriteLine("try and catch passed\n");
+						var students = Newtonsoft.Json.Linq.JObject.Parse(result);
+						foreach (var student in students["students"])
 						{
-							name = student["name"];
-							byte[] utf8bytes = Encoding.UTF8.GetBytes(name);
-							name = Encoding.UTF8.GetString(utf8bytes, 0, utf8bytes.Length);
-							var stu = new Student { name = name, stuID = student["stuID"], pay = student["pay"], sex = student["sex"] };
+							byte[] utf8bytes = Encoding.UTF8.GetBytes((string)student["name"]);
+							string name = Encoding.UTF8.GetString(utf8bytes, 0, utf8bytes.Length);
+							var stu = new Student { name = name, stuID = (string)student["stuID"], pay = (string)student["pay"], sex = (string)student["sex"] };
 							db.Insert(stu);
+							Console.WriteLine("inserted\n");
 						}
 					}
 					catch (SQLiteException ex)
 					{
+						Console.WriteLine("Sqlite exploded");
 						Console.WriteLine(ex.Message);
 					}
 				}

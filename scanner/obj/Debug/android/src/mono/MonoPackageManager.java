@@ -17,19 +17,17 @@ public class MonoPackageManager {
 	static Object lock = new Object ();
 	static boolean initialized;
 
-	public static android.content.Context Context;
+	static android.content.Context Context;
 
 	public static void LoadApplication (Context context, ApplicationInfo runtimePackage, String[] apks)
 	{
 		synchronized (lock) {
-			if (context instanceof android.app.Application) {
-				Context = context;
-			}
 			if (!initialized) {
 				android.content.IntentFilter timezoneChangedFilter  = new android.content.IntentFilter (
 						android.content.Intent.ACTION_TIMEZONE_CHANGED
 				);
 				context.registerReceiver (new mono.android.app.NotifyTimeZoneChanges (), timezoneChangedFilter);
+				Context = context;
 				
 				System.loadLibrary("monodroid");
 				Locale locale       = Locale.getDefault ();
@@ -62,11 +60,6 @@ public class MonoPackageManager {
 		}
 	}
 
-	public static void setContext (Context context)
-	{
-		// Ignore; vestigial
-	}
-
 	public static String[] getAssemblies ()
 	{
 		return MonoPackageManager_Resources.Assemblies;
@@ -87,38 +80,38 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "scanner.dll" comes first in this list. */
 		"scanner.dll",
-		"Connectivity.Plugin.Abstractions.dll",
-		"Connectivity.Plugin.dll",
-		"Newtonsoft.Json.dll",
-		"RestSharp.dll",
-		"SQLite-net.dll",
-		"SQLitePCL.raw.dll",
+		"Java.Interop.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.v4.dll",
 		"Xamarin.Android.Support.v7.AppCompat.dll",
 		"Xamarin.Android.Support.Vector.Drawable.dll",
-		"ZXing.Net.Mobile.Core.dll",
 		"zxing.portable.dll",
+		"ZXing.Net.Mobile.Core.dll",
 		"ZXingNetMobile.dll",
-		"Java.Interop.dll",
-		"System.Runtime.dll",
-		"System.Threading.Tasks.dll",
-		"System.Resources.ResourceManager.dll",
-		"System.Threading.dll",
+		"SQLitePCL.raw.dll",
+		"SQLite-net.dll",
+		"RestSharp.dll",
+		"Newtonsoft.Json.dll",
+		"Connectivity.Plugin.dll",
+		"Connectivity.Plugin.Abstractions.dll",
 		"System.ServiceModel.Internals.dll",
+		"System.Threading.dll",
+		"System.Runtime.dll",
 		"System.Collections.dll",
-		"System.Runtime.Extensions.dll",
-		"System.Reflection.dll",
-		"System.Linq.Expressions.dll",
+		"System.Collections.Concurrent.dll",
 		"System.Diagnostics.Debug.dll",
+		"System.Reflection.dll",
 		"System.Linq.dll",
+		"System.Runtime.InteropServices.dll",
+		"System.Runtime.Extensions.dll",
 		"System.Reflection.Extensions.dll",
 		"System.Text.Encoding.dll",
 		"System.IO.dll",
 		"System.Text.RegularExpressions.dll",
 		"System.Globalization.dll",
-		"System.Collections.Concurrent.dll",
-		"System.Runtime.InteropServices.dll",
+		"System.Threading.Tasks.dll",
+		"System.Linq.Expressions.dll",
+		"System.Resources.ResourceManager.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

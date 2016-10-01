@@ -2,22 +2,11 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\Connectivity.Plugin\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\RestSharp\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\SQLitePCL.raw\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\ZXingNetMobile\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>/Users/theblackcat/Documents/dev/xamarin_app/scanner/obj/Debug/__library_projects__/ZXingNetMobile/library_project_imports/res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
-  <ResolvedAssetDirectories>
-    <ResolvedAssetDirectory>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\Connectivity.Plugin\library_project_imports\assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\RestSharp\library_project_imports\assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\SQLitePCL.raw\library_project_imports\assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\ZXingNetMobile\library_project_imports\assets</ResolvedAssetDirectory>
-  </ResolvedAssetDirectories>
+  <ResolvedAssetDirectories />
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\Connectivity.Plugin.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\RestSharp.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\SQLitePCL.raw.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\ZXingNetMobile.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>/Users/theblackcat/Documents/dev/xamarin_app/scanner/obj/Debug/__library_projects__/ZXingNetMobile.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>

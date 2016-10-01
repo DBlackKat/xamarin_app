@@ -1,7 +1,7 @@
 ﻿<Properties StartupItem="scanner/scanner.csproj">
-  <MonoDevelop.Ide.Workbench ActiveDocument="scanner/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="scanner/MainActivity.cs" Line="111" Column="56" />
+      <File FileName="scanner/MainActivity.cs" Line="111" Column="45" />
       <File FileName="scanner/Search.cs" Line="34" Column="24" />
       <File FileName="scanner/InputNewUser.cs" Line="41" Column="4" />
     </Files>
@@ -11,5 +11,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.scanner AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_x86_X86_google_apis" />
+  <MonoDevelop.Ide.ItemProperties.scanner AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.CB5A24CF3P" />
 </Properties>
