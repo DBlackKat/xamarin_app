@@ -17,7 +17,7 @@ public class MonoPackageManager {
 	static Object lock = new Object ();
 	static boolean initialized;
 
-	public static android.content.Context Context;
+	static android.content.Context Context;
 
 	public static void LoadApplication (Context context, ApplicationInfo runtimePackage, String[] apks)
 	{
@@ -100,12 +100,10 @@ class MonoPackageManager_Resources {
 		"ZXing.Net.Mobile.Core.dll",
 		"zxing.portable.dll",
 		"ZXingNetMobile.dll",
-		"Java.Interop.dll",
 		"System.Runtime.dll",
 		"System.Threading.Tasks.dll",
 		"System.Resources.ResourceManager.dll",
 		"System.Threading.dll",
-		"System.ServiceModel.Internals.dll",
 		"System.Collections.dll",
 		"System.Runtime.Extensions.dll",
 		"System.Reflection.dll",
