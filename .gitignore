@@ -1,10 +1,10 @@
+Debug/
 scanner/obj/Debug/
 scanner/bin/Debug/
 scanner/resource/Debug/
 packages/
 TestResults/
 Components/
-
 
 # globs
 Makefile.in

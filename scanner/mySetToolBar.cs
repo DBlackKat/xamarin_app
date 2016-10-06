@@ -30,7 +30,7 @@ namespace scanner
         private ListView leftDrawer;
         private ActionBarDrawerToggle DrawerToggle;
         private ArrayAdapter<String> drawerAdapter;
-        private string[] index = { "苯磞", "睰ず甧", "穓碝", "更戈" };
+        private string[] index = { /* ���� */ Convert2UTF8("\u6383\u63cf"), /* ���� */ Convert2UTF8("\u6dfb\u52a0"), /* ��ԃ */ Convert2UTF8("\u67e5\u8a62"),/* ���� */ Convert2UTF8("\u66f4\u65b0") };
         
 
         public mySetToolBar(Activity _activity, ref SupportToolbar _toolBar,Context _context)
@@ -69,31 +69,38 @@ namespace scanner
 
         private void leftDrawer_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            if (index[e.Position] == "苯磞")
-            {
-                buttonEvent.scanEvent(sender, e);
-            }
-            else if (index[e.Position] == "睰ず甧")
-            {
-                var intent = new Intent(activity, typeof(InputNewUser)).SetFlags(ActivityFlags.NewTask);
-                context.StartActivity(intent);
-            }
+			if (index[e.Position] == "\u6383\u63cf")/* ���� */
+			{
+				buttonEvent.scanEvent(sender, e);
+			}
+			else if (index[e.Position] == "\u6dfb\u52a0")/* ���� */
+			{
+				var intent = new Intent(activity, typeof(InputNewUser)).SetFlags(ActivityFlags.NewTask);
+				context.StartActivity(intent);
+			}
 
-            else if (index[e.Position] == "穓碝")
-            {
-                var intent = new Intent(activity, typeof(Search)).SetFlags(ActivityFlags.NewTask);
-                context.StartActivity(intent);
-            }
+			else if (index[e.Position] == "\u67e5\u8a62") /* ��ԃ */
+			{
+				var intent = new Intent(activity, typeof(Search)).SetFlags(ActivityFlags.NewTask);
+				context.StartActivity(intent);
+			}
 
-            else if (index[e.Position] == "更戈")
-            {
-                buttonEvent.testEvent(sender, e);
-            }
+			else if (index[e.Position] == "\u66f4\u65b0") /* ���� */
+			{
+				buttonEvent.syncEvent(sender, e);
+			}
+
         }
 
 
-        /********This Area is for the ckick event for toolbar and its button*******/
-
+		/********This Area is for the ckick event for toolbar and its button*******/
+		/********Convert unicode encoding to Readable xml forma*********/
+		private static string Convert2UTF8(string input)
+		{
+			byte[] utf8bytes = Encoding.UTF8.GetBytes(input);
+			return Encoding.UTF8.GetString(utf8bytes, 0, utf8bytes.Length);
+			//return "\u00A9" + getContext().getString(input);
+		}
     }
 
     public class buttonEvent
@@ -101,11 +108,11 @@ namespace scanner
         private static void nullfunc(object sender, EventArgs e) { }
         public delegate void ButtonEvent(object sender, EventArgs e);
         public  static ButtonEvent scanEvent;
-        public static ButtonEvent testEvent;
+        public static ButtonEvent syncEvent;
         public buttonEvent(ButtonEvent _s,ButtonEvent _t)
         {
             scanEvent = _s;
-            testEvent = _t;
+            syncEvent = _t;
         }
     }
 }

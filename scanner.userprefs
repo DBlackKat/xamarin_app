@@ -1,9 +1,11 @@
 ﻿<Properties StartupItem="scanner/scanner.csproj">
-  <MonoDevelop.Ide.Workbench ActiveDocument="scanner/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="scanner/ApiFunctions.cs">
     <Files>
-      <File FileName="scanner/MainActivity.cs" Line="111" Column="56" />
-      <File FileName="scanner/Search.cs" Line="34" Column="24" />
+      <File FileName="scanner/MainActivity.cs" Line="110" Column="22" />
+      <File FileName="scanner/Search.cs" Line="34" Column="14" />
       <File FileName="scanner/InputNewUser.cs" Line="41" Column="4" />
+      <File FileName="scanner/DatabaseFunctions.cs" Line="10" Column="3" />
+      <File FileName="scanner/ApiFunctions.cs" Line="4" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

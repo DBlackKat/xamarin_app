@@ -23,7 +23,7 @@ namespace scanner
 				return ex.Message;
 			}
 		}
-		public void fillingDB(string result, string dbPath)
+		public void buildDB(string result, string dbPath)
 		{
 			if (result != null && result.Length >= 50)
 			{
