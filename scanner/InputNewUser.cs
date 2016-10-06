@@ -6,21 +6,35 @@ using Android.Widget;
 using System.Data;
 using SQLite;
 using System.Json;
+using SupportToolbar = Android.Support.V7.Widget.Toolbar;
+using Android.Support.V7.App;
+using Android.Support.V4.Widget;
+using Android.Views;
+
 namespace scanner
 {
-	[Activity(Label = "InputNewUser")]
-	public class InputNewUser : Activity
+	[Activity(Label = "InputNewUser", MainLauncher = true, Icon = "@mipmap/icon", Theme = "@style/MyTheme")]
+    public class InputNewUser : ActionBarActivity
 	{
-		protected override void OnCreate(Bundle savedInstanceState)
+        private mySetToolBar setToolBar;
+        protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 			SetContentView(Resource.Layout.student);
-			var sqlLiteFilePath = GetFileStreamPath("") + "/db_user.db";
+
+            //set toolbar
+            SupportToolbar Toolbar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(Toolbar);
+            SupportActionBar.SetDisplayShowTitleEnabled(false);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            setToolBar = new mySetToolBar(this, ref Toolbar, ApplicationContext);
+
+            var sqlLiteFilePath = GetFileStreamPath("") + "/db_user.db";
 			var name = FindViewById<EditText>(Resource.Id.studentName);
 			var stuID = FindViewById<EditText>(Resource.Id.studentID);
 			var payed = FindViewById<RadioButton>(Resource.Id.radioYes);
 			var insert = FindViewById<Button>(Resource.Id.addUser);
-			var Main = FindViewById<Button>(Resource.Id.backMain);
+			var Main = FindViewById<ImageButton>(Resource.Id.backMain);
 			string response;
 
 			insert.Click += delegate {
@@ -54,6 +68,11 @@ namespace scanner
 				return ex.Message;
 			}
 		}
-	}
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            setToolBar.DrawerToggleEvent(ref item);
+            return base.OnOptionsItemSelected(item);
+        }
+    }
 }
 

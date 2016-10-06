@@ -2,11 +2,11 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>D:\Sophia\nctu_cs\stuion\xamarin\scanner\obj\Debug\__library_projects__\ZXingNetMobile\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\ZXingNetMobile\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories />
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>D:\Sophia\nctu_cs\stuion\xamarin\scanner\obj\Debug\__library_projects__\ZXingNetMobile.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\Sophia\nctu_cs\stuion\xamarin_app\scanner\obj\Debug\__library_projects__\ZXingNetMobile.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>

@@ -137,6 +137,7 @@ namespace scanner
         }
 
         private mySetToolBar setToolBar;
+        public static buttonEvent button; 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -148,7 +149,9 @@ namespace scanner
             SetSupportActionBar(Toolbar);
             SupportActionBar.SetDisplayShowTitleEnabled(false);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            setToolBar = new mySetToolBar(this, ref Toolbar, BtnScan_Click, testBtn_Click, ApplicationContext);
+            
+            setToolBar = new mySetToolBar(this, ref Toolbar, ApplicationContext);
+            button=new buttonEvent(BtnScan_Click, testBtn_Click);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

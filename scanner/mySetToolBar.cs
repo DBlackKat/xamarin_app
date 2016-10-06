@@ -16,6 +16,8 @@ using SupportToolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Support.V7.App;
 using Android.Support.V4.Widget;
 using Android.Views;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 
 namespace scanner
 {
@@ -29,16 +31,12 @@ namespace scanner
         private ActionBarDrawerToggle DrawerToggle;
         private ArrayAdapter<String> drawerAdapter;
         private string[] index = { "掃描", "添加內容", "搜尋", "下載資料" };
-        public delegate void ButtonEvent(object sender, EventArgs e);
-        private ButtonEvent scanEvent;
-        private ButtonEvent testEvent;
+        
 
-        public mySetToolBar(Activity _activity, ref SupportToolbar _toolBar, ButtonEvent _scanEvent, ButtonEvent _testEvent, Context _context)
+        public mySetToolBar(Activity _activity, ref SupportToolbar _toolBar,Context _context)
         {
             activity = _activity;
             refToolBar = _toolBar;
-            scanEvent = _scanEvent;
-            testEvent = _testEvent;
             context = _context;
 
             refToolBar.SetLogo(Resource.Mipmap.Icon);
@@ -73,7 +71,7 @@ namespace scanner
         {
             if (index[e.Position] == "掃描")
             {
-                scanEvent(sender, e);
+                buttonEvent.scanEvent(sender, e);
             }
             else if (index[e.Position] == "添加內容")
             {
@@ -89,11 +87,25 @@ namespace scanner
 
             else if (index[e.Position] == "下載資料")
             {
-                testEvent(sender, e);
+                buttonEvent.testEvent(sender, e);
             }
         }
 
+
         /********This Area is for the ckick event for toolbar and its button*******/
 
+    }
+
+    public class buttonEvent
+    {
+        private static void nullfunc(object sender, EventArgs e) { }
+        public delegate void ButtonEvent(object sender, EventArgs e);
+        public  static ButtonEvent scanEvent;
+        public static ButtonEvent testEvent;
+        public buttonEvent(ButtonEvent _s,ButtonEvent _t)
+        {
+            scanEvent = _s;
+            testEvent = _t;
+        }
     }
 }
