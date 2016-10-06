@@ -102,6 +102,8 @@
     <Compile Include="InputNewUser.cs" />
     <Compile Include="Search.cs" />
     <Compile Include="HttpBasicAuthenticator.cs" />
+    <Compile Include="DatabaseFunctions.cs" />
+    <Compile Include="ApiFunctions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
