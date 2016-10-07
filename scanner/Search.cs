@@ -36,14 +36,17 @@ namespace scanner
                 StartActivity(main);
             };
             var find = FindViewById<EditText>(Resource.Id.searchBar);
-            var db = new SQLiteConnection(sqlLiteFilePath);
             find.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) =>
             {
                 try
                 {
-                    var container = FindViewById<LinearLayout>(Resource.Id.dataContainer);
+					string queryID = e.Text.ToString();
+
+					var db = new SQLiteConnection(sqlLiteFilePath);
+
+					var container = FindViewById<LinearLayout>(Resource.Id.dataContainer);
                     container.RemoveAllViews();
-                    string queryID = e.Text.ToString();
+                    
                     int num = 0;
                     var query = db.Table<Student>().Where(v => v.stuID.Contains(queryID));
                     foreach (var stu in query)

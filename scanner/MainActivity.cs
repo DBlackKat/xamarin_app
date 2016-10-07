@@ -76,7 +76,7 @@ namespace scanner
                 File.Delete(sqlLiteFilePath);
             }
             string response = dbFunc.createDB(sqlLiteFilePath);
-			Toast.MakeText(this, response, ToastLength.Short).Show();
+			Console.WriteLine("Database created");
 			result = await apiGet.parseData(TARGETURL); // must be used in threading pool otherwise required to add async to function
 
 
@@ -127,5 +127,3 @@ namespace scanner
         }
     }
 }
-
-
