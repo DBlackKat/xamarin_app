@@ -104,6 +104,7 @@
     <Compile Include="HttpBasicAuthenticator.cs" />
     <Compile Include="DatabaseFunctions.cs" />
     <Compile Include="ApiFunctions.cs" />
+    <Compile Include="studentListAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -112,6 +113,9 @@
     <None Include="packages.config" />
     <None Include="PluginsHelp\ConnectivityReadme.txt" />
     <AndroidResource Include="Resources\drawable\button_style.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\UserListLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

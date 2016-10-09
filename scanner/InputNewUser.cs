@@ -34,7 +34,7 @@ namespace scanner
 			var stuID = FindViewById<EditText>(Resource.Id.studentID);
 			var payed = FindViewById<RadioButton>(Resource.Id.radioYes);
 			var insert = FindViewById<Button>(Resource.Id.addUser);
-			var Main = FindViewById<ImageButton>(Resource.Id.backMain);
+			var Main = FindViewById<TextView>(Resource.Id.text_toolbar_title);
 			string response;
 
 			insert.Click += delegate {

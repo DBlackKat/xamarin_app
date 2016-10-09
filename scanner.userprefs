@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="scanner/scanner.csproj">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="scanner/MainActivity.cs" Line="84" Column="37" />
-      <File FileName="scanner/DatabaseFunctions.cs" Line="14" Column="1" />
+      <File FileName="scanner/MainActivity.cs" Line="104" Column="3" />
+      <File FileName="scanner/DatabaseFunctions.cs" Line="46" Column="26" />
       <File FileName="scanner/ApiFunctions.cs" Line="21" Column="4" />
-      <File FileName="scanner/Search.cs" Line="61" Column="46" />
+      <File FileName="scanner/Search.cs" Line="53" Column="10" />
+      <File FileName="scanner/Student.cs" Line="22" Column="2" />
+      <File FileName="scanner/mySetToolBar.cs" Line="92" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

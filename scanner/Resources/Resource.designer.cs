@@ -1516,17 +1516,14 @@ namespace scanner
 			// aapt resource value: 0x7f0c0024
 			public const int activity_chooser_view_content = 2131492900;
 			
-			// aapt resource value: 0x7f0c0071
-			public const int addUser = 2131492977;
+			// aapt resource value: 0x7f0c006f
+			public const int addUser = 2131492975;
 			
 			// aapt resource value: 0x7f0c0030
 			public const int alertTitle = 2131492912;
 			
 			// aapt resource value: 0x7f0c001c
 			public const int always = 2131492892;
-			
-			// aapt resource value: 0x7f0c0067
-			public const int backMain = 2131492967;
 			
 			// aapt resource value: 0x7f0c0019
 			public const int beginning = 2131492889;
@@ -1549,8 +1546,8 @@ namespace scanner
 			// aapt resource value: 0x7f0c001d
 			public const int collapseActionView = 2131492893;
 			
-			// aapt resource value: 0x7f0c0072
-			public const int contentFrame = 2131492978;
+			// aapt resource value: 0x7f0c0073
+			public const int contentFrame = 2131492979;
 			
 			// aapt resource value: 0x7f0c0031
 			public const int contentPanel = 2131492913;
@@ -1560,9 +1557,6 @@ namespace scanner
 			
 			// aapt resource value: 0x7f0c0036
 			public const int customPanel = 2131492918;
-			
-			// aapt resource value: 0x7f0c0066
-			public const int dataContainer = 2131492966;
 			
 			// aapt resource value: 0x7f0c003f
 			public const int decor_content_parent = 2131492927;
@@ -1621,14 +1615,17 @@ namespace scanner
 			// aapt resource value: 0x7f0c005f
 			public const int line3 = 2131492959;
 			
+			// aapt resource value: 0x7f0c0070
+			public const int linearContainer = 2131492976;
+			
 			// aapt resource value: 0x7f0c0009
 			public const int listMode = 2131492873;
 			
+			// aapt resource value: 0x7f0c0065
+			public const int listViewMain = 2131492965;
+			
 			// aapt resource value: 0x7f0c0028
 			public const int list_item = 2131492904;
-			
-			// aapt resource value: 0x7f0c0063
-			public const int mainButton = 2131492963;
 			
 			// aapt resource value: 0x7f0c0059
 			public const int media_actions = 2131492953;
@@ -1651,8 +1648,8 @@ namespace scanner
 			// aapt resource value: 0x7f0c002d
 			public const int parentPanel = 2131492909;
 			
-			// aapt resource value: 0x7f0c006d
-			public const int payment = 2131492973;
+			// aapt resource value: 0x7f0c006b
+			public const int payment = 2131492971;
 			
 			// aapt resource value: 0x7f0c0005
 			public const int progress_circular = 2131492869;
@@ -1663,11 +1660,11 @@ namespace scanner
 			// aapt resource value: 0x7f0c003b
 			public const int radio = 2131492923;
 			
-			// aapt resource value: 0x7f0c0070
-			public const int radioNo = 2131492976;
+			// aapt resource value: 0x7f0c006e
+			public const int radioNo = 2131492974;
 			
-			// aapt resource value: 0x7f0c006f
-			public const int radioYes = 2131492975;
+			// aapt resource value: 0x7f0c006d
+			public const int radioYes = 2131492973;
 			
 			// aapt resource value: 0x7f0c0015
 			public const int screen = 2131492885;
@@ -1681,11 +1678,11 @@ namespace scanner
 			// aapt resource value: 0x7f0c0033
 			public const int scrollView = 2131492915;
 			
-			// aapt resource value: 0x7f0c0064
-			public const int search = 2131492964;
+			// aapt resource value: 0x7f0c0063
+			public const int search = 2131492963;
 			
-			// aapt resource value: 0x7f0c0065
-			public const int searchBar = 2131492965;
+			// aapt resource value: 0x7f0c0064
+			public const int searchBar = 2131492964;
 			
 			// aapt resource value: 0x7f0c0045
 			public const int search_badge = 2131492933;
@@ -1732,8 +1729,8 @@ namespace scanner
 			// aapt resource value: 0x7f0c0011
 			public const int showTitle = 2131492881;
 			
-			// aapt resource value: 0x7f0c006e
-			public const int space1 = 2131492974;
+			// aapt resource value: 0x7f0c006c
+			public const int space1 = 2131492972;
 			
 			// aapt resource value: 0x7f0c002c
 			public const int spacer = 2131492908;
@@ -1753,11 +1750,11 @@ namespace scanner
 			// aapt resource value: 0x7f0c0058
 			public const int status_bar_latest_event_content = 2131492952;
 			
-			// aapt resource value: 0x7f0c006b
-			public const int studentID = 2131492971;
-			
 			// aapt resource value: 0x7f0c0069
-			public const int studentName = 2131492969;
+			public const int studentID = 2131492969;
+			
+			// aapt resource value: 0x7f0c0067
+			public const int studentName = 2131492967;
 			
 			// aapt resource value: 0x7f0c004c
 			public const int submit_area = 2131492940;
@@ -1774,14 +1771,14 @@ namespace scanner
 			// aapt resource value: 0x7f0c0034
 			public const int textSpacerNoButtons = 2131492916;
 			
+			// aapt resource value: 0x7f0c0066
+			public const int textView1 = 2131492966;
+			
 			// aapt resource value: 0x7f0c0068
-			public const int textView1 = 2131492968;
+			public const int textView2 = 2131492968;
 			
 			// aapt resource value: 0x7f0c006a
-			public const int textView2 = 2131492970;
-			
-			// aapt resource value: 0x7f0c006c
-			public const int textView3 = 2131492972;
+			public const int textView3 = 2131492970;
 			
 			// aapt resource value: 0x7f0c0051
 			public const int text_toolbar_title = 2131492945;
@@ -1800,6 +1797,12 @@ namespace scanner
 			
 			// aapt resource value: 0x7f0c002e
 			public const int topPanel = 2131492910;
+			
+			// aapt resource value: 0x7f0c0072
+			public const int tvDesc = 2131492978;
+			
+			// aapt resource value: 0x7f0c0071
+			public const int tvName = 2131492977;
 			
 			// aapt resource value: 0x7f0c0008
 			public const int up = 2131492872;
@@ -1975,10 +1978,13 @@ namespace scanner
 			public const int support_simple_spinner_dropdown_item = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int zxingscanneractivitylayout = 2130968616;
+			public const int UserListLayout = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int zxingscannerfragmentlayout = 2130968617;
+			public const int zxingscanneractivitylayout = 2130968617;
+			
+			// aapt resource value: 0x7f04002a
+			public const int zxingscannerfragmentlayout = 2130968618;
 			
 			static Layout()
 			{

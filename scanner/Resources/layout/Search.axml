@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:constants="clr-namespace:XamarinFormsSample;assembly=XamarinFormsXamlSample"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -34,15 +36,6 @@
             android:layout_height="match_parent"
             android:minWidth="25px"
             android:minHeight="25px">
-            <ImageButton
-                android:id="@+id/mainButton"
-                android:color="#ffffff"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/button_style"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp" />
             <TextView
                 android:text="搜尋學號"
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -59,9 +52,15 @@
                 android:orientation="vertical"
                 android:minWidth="25px"
                 android:minHeight="25px"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/dataContainer" />
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <ListView
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/listViewMain" />
+            </LinearLayout>
         </LinearLayout>
     <!--The Main Content View-->
     <!--The Left Navigation Drawer-->

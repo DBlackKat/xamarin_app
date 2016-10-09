@@ -34,7 +34,7 @@
             android:layout_height="match_parent"
             android:minWidth="25px"
             android:minHeight="25px">
-            <ImageButton
+        <!--            <ImageButton
                 android:id="@+id/backMain"
                 android:color="#ffffff"
                 android:layout_gravity="center_horizontal"
@@ -42,7 +42,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="20dp" />-->
             <TextView
                 android:text="名字"
                 android:textAppearance="?android:attr/textAppearanceMedium"

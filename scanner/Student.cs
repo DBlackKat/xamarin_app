@@ -13,5 +13,10 @@ namespace scanner
 		[MaxLength(7)]
 		public string stuID { get; set; }
 	}
+	public class queryResult
+	{
+		public string Title { get; set; }
+		public string StuInfo{ get; set; }
+	}
 
 }

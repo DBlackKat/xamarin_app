@@ -4,6 +4,7 @@ using Android.Content;
 using Android.OS;
 using Android.Widget;
 using SQLite;
+using System.Collections.Generic;
 using Xamarin.Android;
 using SupportToolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Support.V7.App;
@@ -20,7 +21,7 @@ namespace scanner
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Search);
             var sqlLiteFilePath = GetFileStreamPath("") + "/db_user.db";
-            var Main = FindViewById<ImageButton>(Resource.Id.mainButton);
+			var Main = FindViewById<TextView>(Resource.Id.text_toolbar_title);
 
             //set toolbar
             SupportToolbar Toolbar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
@@ -30,7 +31,10 @@ namespace scanner
             setToolBar = new mySetToolBar(this, ref Toolbar,ApplicationContext);
 
             // back to main page
-            Main.Click += delegate
+
+			//setup list view 
+			ListView listView = FindViewById<ListView>(Resource.Id.listViewMain);
+			Main.Click += delegate
             {
                 var main = new Intent(this, typeof(MainActivity));
                 StartActivity(main);
@@ -41,26 +45,26 @@ namespace scanner
                 try
                 {
 					string queryID = e.Text.ToString();
-
+					string buffer;
 					var db = new SQLiteConnection(sqlLiteFilePath);
 
-					var container = FindViewById<LinearLayout>(Resource.Id.dataContainer);
-                    container.RemoveAllViews();
-                    
                     int num = 0;
-                    var query = db.Table<Student>().Where(v => v.stuID.Contains(queryID));
+					List<queryResult> results = new List<queryResult>();
+					var query = db.Table<Student>().Where(v => v.stuID.Contains(queryID));
                     foreach (var stu in query)
                     {
-                        if (num >= 30)
+                        if (num >= 50)
                             break;
-                        var txtView = new TextView(this);
-                        if (stu.sex == "male")
-                            txtView.Text = stu.stuID + " | " + "男 | " + stu.name;
-                        else
-                            txtView.Text = stu.stuID + " | " + "女 | " + stu.name;
-                        container.AddView(txtView);
-                        num++;
+						if (stu.sex == "male")
+							buffer = "男";
+						else if (stu.sex == "female")
+							buffer = "女";
+						else
+							buffer = "無資料";
+						results.Add(new queryResult { Title = stu.stuID + " " + stu.name, StuInfo = buffer });	
+						num++;
                     }
+					listView.Adapter = new studentListAdapter(this, results);
                 }
                 catch (Exception ex)
                 {
