@@ -77,7 +77,7 @@ namespace scanner
             }
             string response = dbFunc.createDB(sqlLiteFilePath);
 			Console.WriteLine("Database created");
-			result = await apiGet.parseData(TARGETURL); // must be used in threading pool otherwise required to add async to function
+			result = await apiGet.parseData(TARGETURL); //must be used in threading pool otherwise add async to function
 
 
 			ProgressDialog progress;
@@ -118,6 +118,20 @@ namespace scanner
             
             setToolBar = new mySetToolBar(this, ref Toolbar, ApplicationContext);
             button=new buttonEvent(BtnScan_Click, testBtn_Click);
+
+			EditText mainSearchBar = FindViewById<EditText>(Resource.Id.editTextMain);
+			mainSearchBar.KeyPress += (object sender, View.KeyEventArgs e) =>
+			{
+				e.Handled = false;
+				if (e.Event.Action == KeyEventActions.Down && e.KeyCode == Keycode.Enter)
+				{
+					Console.WriteLine("Enter detected\n");
+					var passSearchInfo = new Intent(this, typeof(Search));
+					passSearchInfo.PutExtra("search", mainSearchBar.Text);
+					StartActivity(passSearchInfo);
+					e.Handled = true;
+				}
+			};
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

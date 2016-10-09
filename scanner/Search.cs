@@ -20,8 +20,9 @@ namespace scanner
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Search);
-            var sqlLiteFilePath = GetFileStreamPath("") + "/db_user.db";
-			var Main = FindViewById<TextView>(Resource.Id.text_toolbar_title);
+			var find = FindViewById<EditText>(Resource.Id.searchBar);
+            var Main = FindViewById<TextView>(Resource.Id.text_toolbar_title);
+			//get intent input
 
             //set toolbar
             SupportToolbar Toolbar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
@@ -32,44 +33,23 @@ namespace scanner
 
             // back to main page
 
+			string mainAcitivityText = Intent.GetStringExtra("search") ?? "no data";
+			if (mainAcitivityText != "no data")
+			{
+				Console.WriteLine("get data from main!\n");
+				find.Text = mainAcitivityText;
+				searchInit(mainAcitivityText);
+			}
 			//setup list view 
-			ListView listView = FindViewById<ListView>(Resource.Id.listViewMain);
 			Main.Click += delegate
             {
                 var main = new Intent(this, typeof(MainActivity));
                 StartActivity(main);
             };
-            var find = FindViewById<EditText>(Resource.Id.searchBar);
+            
             find.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) =>
             {
-                try
-                {
-					string queryID = e.Text.ToString();
-					string buffer;
-					var db = new SQLiteConnection(sqlLiteFilePath);
-
-                    int num = 0;
-					List<queryResult> results = new List<queryResult>();
-					var query = db.Table<Student>().Where(v => v.stuID.Contains(queryID));
-                    foreach (var stu in query)
-                    {
-                        if (num >= 50)
-                            break;
-						if (stu.sex == "male")
-							buffer = "男";
-						else if (stu.sex == "female")
-							buffer = "女";
-						else
-							buffer = "無資料";
-						results.Add(new queryResult { Title = stu.stuID + " " + stu.name, StuInfo = buffer });	
-						num++;
-                    }
-					listView.Adapter = new studentListAdapter(this, results);
-                }
-                catch (Exception ex)
-                {
-                    Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
-                }
+				searchInit(e.Text.ToString());
             };
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -77,6 +57,40 @@ namespace scanner
             setToolBar.DrawerToggleEvent(ref item);
             return base.OnOptionsItemSelected(item);
         }
+		private void searchInit(string input)
+		{
+			string queryID = input;
+			string buffer;
+			var sqlLiteFilePath = GetFileStreamPath("") + "/db_user.db";
+			var db = new SQLiteConnection(sqlLiteFilePath);
+			ListView listView = FindViewById<ListView>(Resource.Id.listViewMain);
+
+			int num = 0;
+			List<queryResult> results = new List<queryResult>();
+
+			try
+			{
+				var query = db.Table<Student>().Where(v => v.stuID.Contains(queryID));
+				foreach (var stu in query)
+				{
+					if (num >= 50)
+						break;
+					if (stu.sex == "male")
+						buffer = "男";
+					else if (stu.sex == "female")
+						buffer = "女";
+					else
+						buffer = "無資料";
+					results.Add(new queryResult { Title = stu.stuID + " " + stu.name, StuInfo = buffer });
+					num++;
+				}
+				listView.Adapter = new studentListAdapter(this, results);
+			}
+			catch (Exception ex)
+			{
+				Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
+			}
+		}
     }
 }
 
