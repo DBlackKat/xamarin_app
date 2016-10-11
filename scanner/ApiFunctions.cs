@@ -36,7 +36,7 @@ namespace scanner
 			{
 				HttpResponseMessage ServerResponse = await client.GetAsync(TARGETURL);
 				HttpContent content = ServerResponse.Content;
-				result = await content.ReadAsStringAsync();
+				result = await Task.Run(() => content.ReadAsStringAsync());
 				// ... Check Status Code                                
 			}
 			catch (HttpRequestException except)

@@ -10,9 +10,10 @@ using SupportToolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Support.V7.App;
 using Android.Support.V4.Widget;
 using Android.Views;
+
 namespace scanner
 {
-    [Activity(Label = "scanner", MainLauncher = true, Icon = "@mipmap/icon", Theme = "@style/MyTheme")]
+   [Activity(Label = "scanner", MainLauncher = false, Theme = "@style/MyTheme")]
     public class Search : ActionBarActivity
     {
         private mySetToolBar setToolBar;

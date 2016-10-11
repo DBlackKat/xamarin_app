@@ -13,7 +13,7 @@ using Android.Views;
 
 namespace scanner
 {
-	[Activity(Label = "InputNewUser", MainLauncher = true, Icon = "@mipmap/icon", Theme = "@style/MyTheme")]
+	[Activity(Label = "InputNewUser", MainLauncher = false, Icon = "@mipmap/icon", Theme = "@style/MyTheme")]
     public class InputNewUser : ActionBarActivity
 	{
         private mySetToolBar setToolBar;
@@ -50,10 +50,10 @@ namespace scanner
 			};
 			// Create your application here
 		}
-		private async void postData()
+/*		private async void postData()
 		{
 			
-		}
+		}*/
 		public string insertDB(string dbPath,string name,string id,string pay,string sex)
 		{
 			try

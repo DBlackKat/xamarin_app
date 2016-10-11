@@ -75,10 +75,10 @@ namespace scanner
             {
                 File.Delete(sqlLiteFilePath);
             }
-            string response = dbFunc.createDB(sqlLiteFilePath);
+            dbFunc.createDB(sqlLiteFilePath);
 			Console.WriteLine("Database created");
-			result = await apiGet.parseData(TARGETURL); //must be used in threading pool otherwise add async to function
 
+			result = await apiGet.parseData(TARGETURL); //must be used in threading pool otherwise add async to function
 
 			ProgressDialog progress;
             progress = ProgressDialog.Show(this, "Loading", "Please Wait...", true);
