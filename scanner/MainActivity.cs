@@ -61,7 +61,6 @@ namespace scanner
                 }
             }
         }
-
         private async void testBtn_Click(object sender, EventArgs e)
         {
             var sqlLiteFilePath = GetFileStreamPath("") + "/db_user.db";

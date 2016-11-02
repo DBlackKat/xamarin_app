@@ -68,7 +68,6 @@ namespace scanner
 
 			int num = 0;
 			List<queryResult> results = new List<queryResult>();
-
 			try
 			{
 				var query = db.Table<Student>().Where(v => v.stuID.Contains(queryID));

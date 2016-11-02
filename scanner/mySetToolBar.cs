@@ -57,7 +57,6 @@ namespace scanner
             leftDrawer.SetAdapter(drawerAdapter);
             leftDrawer.ItemClick += leftDrawer_ItemClick;
 
-
         }
 
         /********This Area is for the ckick event for toolbar and its button*******/

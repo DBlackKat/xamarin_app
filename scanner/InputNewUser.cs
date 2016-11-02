@@ -50,7 +50,7 @@ namespace scanner
 			};
 			// Create your application here
 		}
-/*		private async void postData()
+		/*private async void postData()
 		{
 			
 		}*/
