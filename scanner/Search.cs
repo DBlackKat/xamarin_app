@@ -80,7 +80,11 @@ namespace scanner
 					else if (stu.sex == "female")
 						buffer = "女";
 					else
-						buffer = "無資料";
+						buffer = "  無資料";
+					if (stu.course == "none")
+						buffer += "  無系上資料";
+					else
+						buffer += "  " + stu.course;
 					results.Add(new queryResult { Title = stu.stuID + " " + stu.name, StuInfo = buffer });
 					num++;
 				}

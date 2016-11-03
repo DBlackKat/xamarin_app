@@ -10,6 +10,7 @@ namespace scanner
 		public string name { get; set; }
 		public string sex { get; set; }
 		public string pay { get; set; }
+		public string course { get; set;}
 		[MaxLength(7)]
 		public string stuID { get; set; }
 	}
