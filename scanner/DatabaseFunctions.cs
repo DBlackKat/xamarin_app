@@ -33,7 +33,6 @@ namespace scanner
 				{
 					var db = new SQLiteConnection(dbPath);
 
-					Console.WriteLine("try and catch passed\n");
 					var students = Newtonsoft.Json.Linq.JObject.Parse(result);
 					foreach (var student in students["students"])
 					{

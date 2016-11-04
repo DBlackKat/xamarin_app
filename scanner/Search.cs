@@ -58,22 +58,19 @@ namespace scanner
             setToolBar.DrawerToggleEvent(ref item);
             return base.OnOptionsItemSelected(item);
         }
-		private void searchInit(string input)
+		private List<queryResult> createResultList(TableQuery <Student> query)			
 		{
-			string queryID = input;
-			string buffer;
-			var sqlLiteFilePath = GetFileStreamPath("") + "/db_user.db";
-			var db = new SQLiteConnection(sqlLiteFilePath);
-			ListView listView = FindViewById<ListView>(Resource.Id.listViewMain);
-
-			int num = 0;
 			List<queryResult> results = new List<queryResult>();
-			try
+			string buffer;
+			int num = 0;
+			if (query.Count() == 0)
 			{
-				var query = db.Table<Student>().Where(v => v.stuID.Contains(queryID));
+				results.Add(new queryResult { Title = "查無資料!", StuInfo = " " });
+			}
+			else {
 				foreach (var stu in query)
 				{
-					if (num >= 50)
+					if (num >= 40)
 						break;
 					if (stu.sex == "male")
 						buffer = "男";
@@ -88,12 +85,27 @@ namespace scanner
 					results.Add(new queryResult { Title = stu.stuID + " " + stu.name, StuInfo = buffer });
 					num++;
 				}
+			}
+			return results;
+		}
+		private void searchInit(string input)
+		{
+			string queryID = input;
+			var sqlLiteFilePath = GetFileStreamPath("") + "/db_user.db";
+			var db = new SQLiteConnection(sqlLiteFilePath);
+			ListView listView = FindViewById<ListView>(Resource.Id.listViewMain);
+			List<queryResult> results;
+			try
+			{
+				var query = db.Table<Student>().Where(v => v.stuID.Contains(queryID));
+				results = createResultList(query);
 				listView.Adapter = new studentListAdapter(this, results);
 			}
 			catch (Exception ex)
 			{
 				Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
 			}
+
 		}
     }
 }

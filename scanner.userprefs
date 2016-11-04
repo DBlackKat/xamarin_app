@@ -1,13 +1,12 @@
 ﻿<Properties StartupItem="scanner/scanner.csproj">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="scanner/Search.cs">
     <Files>
-      <File FileName="scanner/studentListAdapter.cs" Line="53" Column="67" />
-      <File FileName="scanner/MainActivity.cs" Line="63" Column="10" />
-      <File FileName="scanner/Search.cs" Line="76" Column="20" />
-      <File FileName="scanner/mySetToolBar.cs" Line="59" Column="4" />
-      <File FileName="scanner/InputNewUser.cs" Line="53" Column="5" />
-      <File FileName="scanner/HttpBasicAuthenticator.cs" Line="1" Column="1" />
-      <File FileName="scanner/ApiFunctions.cs" Line="30" Column="45" />
+      <File FileName="scanner/studentListAdapter.cs" Line="22" Column="26" />
+      <File FileName="scanner/MainActivity.cs" Line="49" Column="38" />
+      <File FileName="scanner/Search.cs" Line="84" Column="31" />
+      <File FileName="scanner/ApiFunctions.cs" Line="48" Column="3" />
+      <File FileName="scanner/Student.cs" Line="13" Column="34" />
+      <File FileName="scanner/DatabaseFunctions.cs" Line="40" Column="53" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
